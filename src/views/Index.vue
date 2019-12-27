@@ -19,7 +19,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.tabbar-hidden{
+.tabbar-hidden {
   height: 60px;
 }
 </style>

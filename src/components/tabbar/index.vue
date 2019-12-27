@@ -1,6 +1,6 @@
 <template>
   <div class="tabbar">
-    <van-tabbar v-model="index" safe-area-inset-bottom>
+    <van-tabbar v-model="index" safe-area-inset-bottom :z-index="99"	>
       <van-tabbar-item to="/" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item to="/type" icon="orders-o">类别</van-tabbar-item>
       <van-tabbar-item to="/shop" icon="shopping-cart-o">购物车</van-tabbar-item>
@@ -36,7 +36,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-//  .tabbar{
-//    padding-top: 60px
-//  }
+
 </style>

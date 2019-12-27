@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 // 导入设配js
-import 'lib-flexible'
+import 'amfe-flexible'
 
 // 导入vant
 import Vant from 'vant';
