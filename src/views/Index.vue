@@ -2,6 +2,7 @@
   <div>
     <router-view></router-view>
     <!-- 在.vue文件中 如果该标签没有填充内容 则直接写为单标签 -->
+    <div class="tabbar-hidden"></div>
     <ZTabBar />
   </div>
 </template>
@@ -18,4 +19,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.tabbar-hidden{
+  height: 60px;
+}
 </style>

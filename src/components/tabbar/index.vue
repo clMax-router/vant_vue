@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tabbar">
     <van-tabbar v-model="index" safe-area-inset-bottom>
       <van-tabbar-item to="/" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item to="/type" icon="orders-o">类别</van-tabbar-item>
@@ -36,4 +36,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+//  .tabbar{
+//    padding-top: 60px
+//  }
 </style>

@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 导入设配js
+import 'lib-flexible'
+
 // 导入vant
 import Vant from 'vant';
 // 导入vant的css
