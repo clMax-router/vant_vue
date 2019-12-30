@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 人气推荐 -->
     <div class="card">
       <div class="card-container">
         <div class="card-title">
@@ -20,10 +21,11 @@
         </div>
       </div>
     </div>
+    <!-- 最新周边 -->
     <div class="card">
       <div class="card-container">
         <div class="card-title">
-          <div class="left">人气推荐</div>
+          <div class="left">最新周边</div>
           <div class="right">更多 ></div>
         </div>
         <div class="card-main">
@@ -40,14 +42,214 @@
                 <div class="blow">是时候展现英雄真正实力</div>
                 <div class="pic">￥ 57</div>
               </div>
+              
             </div>
             <div class="periphery-card-rotation">
               <!-- 商品走马灯 -->
               <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
-                <van-swipe-item>1</van-swipe-item>
-                <van-swipe-item>2</van-swipe-item>
-                <van-swipe-item>3</van-swipe-item>
-                <van-swipe-item>4</van-swipe-item>
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 游戏周边 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card">
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 乐高积木 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card">
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 鼠标垫，手机壳 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card">
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 手机挂饰 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card" >
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 衣服 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card">
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 书 -->
+    <div class="card">
+      <div class="card-container">
+        <div class="card-main">
+          <div class="periphery-card">
+            <div class="periphery-card-equally" :style="{backgroundImage:'url(http://nos.netease.com/dmall-mc/%E5%B1%85%E5%AE%B6%E7%94%9F%E6%B4%BBbanner750x370.jpg4bb96710-874b-40b1-8b2f-0f6cff4dd631?download=%25E5%25B1%2585%25E5%25AE%25B6%25E7%2594%259F%25E6%25B4%25BBbanner750x370.jpg&Signature=wkmTt%2BmM%2FmuthYuAolCPHkCs1EGh3lIKonq347dimWI%3D&Expires=1577584938&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84)'}"></div>
+            <div class="periphery-card-rotation">
+              <!-- 商品走马灯 -->
+              <van-swipe :loop="false" :width="defaulteWidth" :show-indicators="false">
+                <van-swipe-item :key="index" v-for="(item,index) in 3">
+                  <!-- 商品个件 -->
+                  <div class="goods">
+                    <div class="goods_img">
+                      <img
+                        src="https://yanxuan-item.nosdn.127.net/3da7c5729d3a55f49b8d18f7a145e5f3.png"
+                      />
+                      <div v-if="false">已售罄</div>
+                    </div>
+                    <div class="goods_info">守望先锋</div>
+                    <div class="goods_pic">￥ 29.00</div>
+                    <div class="goods_discount">
+                      <del>￥ 29.00</del>
+                    </div>
+                  </div>
+                </van-swipe-item>
               </van-swipe>
             </div>
           </div>
@@ -59,39 +261,42 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      defaulteWidth:200,
-    }
+      defaulteWidth: 100
+    };
   },
-  mounted(){
-    this.a()
+  mounted() {
+    this.windowChange();
   },
-  computed:{
-    autoWidth(){
+  computed: {
+    autoWidth() {
       // 获取html的fontSize
 
-      var htmlDom = document.querySelector('html');
-      console.log(htmlDom)
-      return 1
+      var htmlDom = document.querySelector("html");
+      console.log(htmlDom);
+      return 1;
     }
   },
-  methods:{
-    a(){
-      var htmlDom = document.querySelector('html');
-      // 默认的字体大小为37.5
-      // 默认的宽度为200
-      // 计算比例
-      let defaulteFontSize = 37.5;
-      let bl =  this.defaulteWidth/defaulteFontSize;
-      let fz = parseFloat(htmlDom.style.fontSize);
-      let width= fz*bl;
-      console.log(bl)
-      console.log(width)
-      this.defaulteWidth = width;
+  methods: {
+    windowChange() {
+      var htmlDom = document.querySelector("html");
+      // 监听窗口宽度变化
+      window.onresize = () => {
+        htmlDom = document.querySelector("html");
+
+        // 默认的字体大小为37.5
+        // 默认的宽度为200
+        // 计算比例
+        let fz = parseFloat(htmlDom.style.fontSize);
+        // 默认的比例
+        let defaulteBl = 200 / 37.5;
+        let width = fz * defaulteBl;
+        this.defaulteWidth = width;
+      };
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -116,6 +321,14 @@ export default {
       display: flex;
       flex-wrap: wrap;
       .periphery-card {
+        /* 游戏周边*/
+        .periphery-card-equally {
+          height: 158px;
+          width: 100%;
+          border-radius: 4px;
+          overflow: hidden;
+          background-size: cover;
+        }
         width: 100%;
       }
       .bigGird-card,
@@ -156,22 +369,57 @@ export default {
       }
     }
   }
+  /*  */
   .periphery-card-rotation {
     /* 设置走马灯样式 */
     width: 100% !important;
     margin-top: 10px;
+
     /* 轮播图 */
-    .van-swipe__track {
-      width: 100% !important;
+    .goods {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      line-height: 1.2;
+      div {
+        text-align: center;
+      }
+      .goods_pic,
+      .goods_discount {
+        font-size: 14px;
+      }
+      .goods_pic {
+        color: #dd0303;
+      }
+      .goods_discount {
+        color: #bcbcbc;
+      }
+
+      .goods_img {
+        background-color: #f4f4f4;
+        height: 67.79px;
+        width: 75.5px;
+        position: relative;
+        margin: auto;
+        div{
+          width: 100%;
+          height: 23px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          text-align: center;
+          background-color:  rgba($color: #000000, $alpha: 0.5);
+          font-size: 12px;
+          color: #fff;
+          line-height: 23px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
-    img {
-      height: 67.79px;
-      width: 75.5px;
-    }
-    .card-center {
-      /* 设置 */
-      margin: auto;
-    }
+
     .carousel-item {
       width: 104px;
       display: flex;
