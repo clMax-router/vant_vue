@@ -6,7 +6,6 @@
 
 <script>
     import User from "@/components/user";
-
     export default {
     name:'user',
         components:{

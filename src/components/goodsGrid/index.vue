@@ -301,10 +301,8 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  overflow: hidden;
   margin-top: 10px;
   background-color: #fff;
-  padding: 18px 10px;
   .card-container {
     font-size: 16px;
     .card-title {

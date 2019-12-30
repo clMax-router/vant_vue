@@ -22,11 +22,12 @@ export default {
 .tabbar-hidden {
   height: 60px;
 }
+</style>
+<style>
 .card {
   width: 100%;
   overflow: hidden;
-  margin-top: 10px;
-  background-color: #fff;
   padding: 18px 10px;
+  box-sizing: border-box;
 }
 </style>
