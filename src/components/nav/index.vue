@@ -6,7 +6,7 @@
         <img src="@/assets/logo.png" />
       </div>
       <div class="right">
-        <div class="search">
+        <div @click="goSearch" class="search">
           <van-icon name="search" class="myicon" />
           <p>搜索商品，里面有你想要的</p>
         </div>
@@ -17,7 +17,13 @@
 
 <script>
 export default {
-  name: "shop"
+  name: "shop",
+  methods:{
+    goSearch(){ // 去搜索页面
+      this.$router.push('/search')
+
+    }
+  }
 };
 </script>
 

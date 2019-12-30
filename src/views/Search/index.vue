@@ -1,30 +1,58 @@
 <template>
   <div>
+    <!-- 搜索框 -->
     <div class="search">
       <div class="left">
         <img src="@/assets/logo.png" />
       </div>
       <div class="center">
-        <van-search placeholder="请输入搜索关键词" v-model="value" />
+        <van-search :autofocus="true" placeholder="请输入搜索关键词" v-model="value" />
       </div>
       <div class="right">
-        <a href="#">取消</a>
+        <a href="#" @click.prevent="returnPage">取消</a>
       </div>
     </div>
+    <!-- 搜索历史 -->
     <div class="card">
       <div class="searchHistory">
-        <div></div>
+        <div class="txt">搜索历史</div>
+        <div class="icon" v-if="historyTxt.length">
+          <van-icon name="delete" />
+        </div>
+      </div>
+      <!-- 搜索历史 文字 -->
+      <div class="historyTxt">
+        <div :key="item.id" v-for="item in historyTxt">{{item.content}}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      value: "",
+      historyTxt: [
+        { content: "akun", id: 1 },
+        { content: "akunsb", id: 2 },
+        { content: "akun", id: 3 },
+        { content: "akunsb", id: 4 },
+        { content: "akun", id: 5 },
+        { content: "akunsb", id: 6 }
+      ]
+    };
+  },
+  methods:{
+    returnPage(){
+      this.$router.back()
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-/*  */
+/* 搜索框 */
 .search {
   display: flex;
   height: 40px;
@@ -65,6 +93,39 @@ export default {};
     a {
       color: #4aadf8;
       font-size: 16px;
+    }
+  }
+}
+
+/* 搜索历史 */
+.card {
+  /* 容器 */
+  .searchHistory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .txt {
+      font-size: 14px;
+    }
+    .icon {
+      font-size: 20px;
+      color: #b8b8b8;
+    }
+  }
+
+  .historyTxt {
+    // 历史文字
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    div {
+      height: 36px;
+      background-color: #ebebeb;
+      font-size: 16px;
+      line-height: 36px;
+      padding: 0 14px;
+      margin-right: 10px;
+      margin-bottom: 10px; 
     }
   }
 }

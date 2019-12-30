@@ -13,25 +13,25 @@ const routes = [
           path: '',
           name: 'home.',
           //路由懒加载
-          component: () => import('@/views/Home/index')
+          component: () => import('@/views/Home/index') // 主页面
         },
         {
           path: '/type',
           name: 'type',
           //路由懒加载
-          component: () => import('@/views/Type/index')
+          component: () => import('@/views/Type/index') // 分类页面
         },
         {
           path: '/shop',
           name: 'shop',
           //路由懒加载
-          component: () => import('@/views/Shop/index')
+          component: () => import('@/views/Shop/index') // 购物车页面
         },
         {
           path: '/user',
           name: 'user',
           //路由懒加载
-          component: () => import('@/views/User/index')
+          component: () => import('@/views/User/index') // 用户页面
         },
         {
           path: '/search',
