@@ -1,12 +1,17 @@
 <template>
     <div>
-        这是用户页面
+        <User/>
     </div>
 </template>
 
 <script>
-export default {
-    name:'user'
+    import User from "@/components/user";
+
+    export default {
+    name:'user',
+        components:{
+            User
+        }
 }
 </script>
 
