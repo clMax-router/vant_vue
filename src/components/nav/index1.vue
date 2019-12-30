@@ -6,7 +6,7 @@
         <img src="@/assets/logo.png" />
       </div>
       <div class="right">
-          <p>周边商城</p>
+          <p>购物车</p>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ export default {
     height: 100%;
     padding: 0 6px;
     color: #ffffff;
-    margin-left: 70px;
+    margin-left: 80px;
     font-size: smaller;
     font-weight: bold;
   }
