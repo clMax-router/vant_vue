@@ -6,22 +6,15 @@
         <img src="@/assets/logo.png" />
       </div>
       <div class="right">
-          <div>{{name}}</div>
+          <p>购物车</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-var routerArr = ["/", "/type", "/shop", "/user"];
-var routerName = ["首页", "类别", "购物车", "用户"];
 export default {
-  name: "shop",
-  data(){
-    return {
-      name: routerName[routerArr.indexOf(this.$route.path)] // 根据路由更改name
-    }
-  }
+  name: "shop"
 };
 </script>
 
@@ -54,13 +47,8 @@ export default {
     height: 100%;
     padding: 0 6px;
     color: #ffffff;
-<<<<<<< HEAD
-    margin-left: 90px;
-    font-size: inherit;
-=======
-    margin-left: 70px;
+    margin-left: 80px;
     font-size: smaller;
->>>>>>> 0377ace51a9c536e00861f97dbd96c606ff3e2cb
     font-weight: bold;
   }
 }
