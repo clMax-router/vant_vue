@@ -1,6 +1,5 @@
 <template>
   <div class="nav">
-    <div style="height:34.13px"></div>
     <div class="nav-container">
       <div class="left">
         <img src="@/assets/logo.png" />
@@ -54,13 +53,10 @@ export default {
     height: 100%;
     padding: 0 6px;
     color: #ffffff;
-<<<<<<< HEAD
     margin-left: 90px;
     font-size: inherit;
-=======
     margin-left: 70px;
     font-size: smaller;
->>>>>>> 0377ace51a9c536e00861f97dbd96c606ff3e2cb
     font-weight: bold;
   }
 }

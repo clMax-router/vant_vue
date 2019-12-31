@@ -1,6 +1,5 @@
 <template>
   <div class="nav">
-    <div style="height:34.13px"></div>
     <div class="nav-container">
       <div class="left">
         <img src="@/assets/logo.png" />
