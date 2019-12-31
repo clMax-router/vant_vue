@@ -1,15 +1,19 @@
 <template>
-    <div>
-        这是购物车页面
-    </div>
+  <div>
+      <Nav/>
+  </div>
 </template>
 
 <script>
+import Nav from "@/components/nav/index2";
+
 export default {
-    name:'shop'
-}
+  name: "shop",
+  components:{
+      Nav
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
