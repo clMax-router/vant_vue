@@ -7,20 +7,20 @@
             <van-tab title="邮箱登录">
                 <div class="input">
                     <van-cell-group>
-                        <van-field v-model="value" placeholder="请输入邮箱地址" />
+                        <van-field v-model="username" placeholder="请输入邮箱地址" />
                     </van-cell-group>
                     <van-cell-group>
-                        <van-field type="password" v-model="value" placeholder="请输入密码" />
+                        <van-field type="password" v-model="password" placeholder="请输入密码" />
                     </van-cell-group>
                 </div>
             </van-tab>
             <van-tab title="手机号登录">
                 <div class="input">
                     <van-cell-group>
-                        <van-field v-model="value" placeholder="请输入手机号" />
+                        <van-field v-model="username" placeholder="请输入手机号" />
                     </van-cell-group>
                     <van-cell-group>
-                        <van-field type="password" v-model="value" placeholder="请输入密码" />
+                        <van-field type="password" v-model="password" placeholder="请输入密码" />
                     </van-cell-group>
                 </div>
             </van-tab>
@@ -40,7 +40,9 @@
         name: "index",
         data() {
             return {
-                active: 2
+                active: 2,
+                username: '',
+                password: ''
             };
         }
     }

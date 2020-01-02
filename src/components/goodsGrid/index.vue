@@ -290,7 +290,7 @@ export default {
         // 计算比例
         let fz = parseFloat(htmlDom.style.fontSize);
         // 默认的比例
-        let defaulteBl = 200 / 37.5;
+        let defaulteBl = 100 / 37.5;
         let width = fz * defaulteBl;
         this.defaulteWidth = width;
       };
