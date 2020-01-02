@@ -38,6 +38,48 @@ const routes = [
           name: 'search',
           //路由懒加载
           component: () => import('@/views/Search')
+        },
+        {
+            path: '/type/Game Category',
+            name: 'Game Category',
+            //路由懒加载
+            component: () => import('@/views/Type/Game Category')
+        },
+        {
+            path: '/type/Home life',
+            name: 'Home life',
+            //路由懒加载
+            component: () => import('@/views/Type/Home life')
+        },
+        {
+            path: '/type/Hand-made model',
+            name: 'Hand-made model',
+            //路由懒加载
+            component: () => import('@/views/Type/Hand-made model')
+        },
+        {
+            path: '/type/Digital peripherals',
+            name: 'Digital peripherals',
+            //路由懒加载
+            component: () => import('@/views/Type/Digital peripherals')
+        },
+        {
+            path: '/type/Accessories pendant',
+            name: 'Accessories pendant',
+            //路由懒加载
+            component: () => import('@/views/Type/Accessories pendant')
+        },
+        {
+            path: '/type/Clothing',
+            name: 'Clothing',
+            //路由懒加载
+            component: () => import('@/views/Type/Clothing')
+        },
+        {
+            path: '/type/Book stationery',
+            name: 'Book stationery',
+            //路由懒加载
+            component: () => import('@/views/Type/Book stationery')
         }
     ]
   },
