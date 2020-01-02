@@ -30,15 +30,16 @@
         <p>购物车还是空的</p>
       </div>
     </div>
-    <div style="height:124px"></div> <!-- 占位div -->
+    <div style="height:124px"></div>
+    <!-- 占位div -->
     <!-- 总价 -->
     <div class="total">
       <div class="info">
         <div class="infoCheckbox">
-          <input type="checkbox" />
+          <input type="checkbox" v-model="isSelectionAll" />
         </div>
-        <div class="infoSelect">已选 ()</div>
-        <div class="infoPic">￥</div>
+        <div class="infoSelect">已选({{number}})</div>
+        <div class="infoPic">￥ {{totalPic}}</div>
         <div class="infoBtn">
           <van-button type="info" size="large">下单</van-button>
         </div>
@@ -106,6 +107,47 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    // 已选商品个数
+    number() {
+      let num = 0;
+      this.shopList.find(item => {
+        if (item.selection) {
+          num++;
+        }
+      });
+      return num;
+    },
+
+    // 商品总价
+    totalPic() {
+      let pic = 0;
+      this.shopList.find(item => {
+        if (item.selection) {
+          pic += item.pic * item.number;
+        }
+      });
+      return pic;
+    },
+
+    // 是否全选
+    isSelectionAll: {
+      get() {
+        if (this.shopList.filter(item => !item.selection).length) {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      set(val) {
+        this.shopList = this.shopList.map(item => {
+          item.selection = val
+          return item;
+        })
+        // return true;
+      }
+    }
   }
 };
 </script>
@@ -191,7 +233,9 @@ export default {
     width: 100%;
     display: flex;
     align-items: center;
-    .infoCheckbox,.infoSelect,.infoBtn{
+    .infoCheckbox,
+    .infoSelect,
+    .infoBtn {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -222,7 +266,7 @@ export default {
       // 下单按钮
       width: 105px;
       height: 100%;
-      padding-top: 10px; 
+      padding-top: 10px;
     }
   }
 }
