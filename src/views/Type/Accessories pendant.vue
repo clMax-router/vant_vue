@@ -32,7 +32,7 @@
 
 <style lang="scss" scoped>
     .home {
-        height: 450px;
+        height: 500px;
         color: #4aadf8;
         text-align: center;
         font-size: small;
