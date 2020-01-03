@@ -3,6 +3,15 @@
   <div>
     <div class="card">
       <div class="shopList" v-if="shopList.length">
+        <!-- 删除购物车按钮 -->
+        <div class="del" @click="showPopup">删除</div>
+        <!-- <van-button v-model="show" closeable>
+          <div>
+            <h2>确认删除?</h2>
+            <van-button type="default">取消</van-button>
+            <van-button type="danger">确定</van-button>
+          </div>
+        </van-button>-->
         <!-- 商品 -->
         <div class="shop" :key="item.id" v-for="item in shopList">
           <!-- 单选框 -->
@@ -19,7 +28,7 @@
             <div class="info">{{item.info}}</div>
             <div class="btnAndSpan">
               <span>￥{{item.pic}}</span>
-              <van-stepper v-model="item.number" />
+              <van-stepper v-model="item.number" :max="99" />
             </div>
           </div>
         </div>
@@ -50,7 +59,8 @@
 </template>
 
 <script>
-export default {
+import {Dialog} from 'vant'
+export default { 
   name: "shop",
   data() {
     return {
@@ -108,6 +118,31 @@ export default {
       ]
     };
   },
+  methods: {
+    // 操作确认删除遮罩 显示或隐藏
+    showPopup() {
+      Dialog.confirm({
+        title: "删除",
+        message: "确认删除已选商品？"
+      })
+        .then(() => {
+          // on confirm
+          this.delShop()
+        })
+        .catch(() => {
+          // on cancel
+        });
+    },
+
+    // 删除已选商品
+    delShop(){
+      this.shopList = this.shopList.filter(item => {
+        if(!item.selection){
+          return item
+        }
+      })
+    }
+  },
   computed: {
     // 已选商品个数
     number() {
@@ -134,7 +169,7 @@ export default {
     // 是否全选
     isSelectionAll: {
       get() {
-        if (this.shopList.filter(item => !item.selection).length) {
+        if ( (!this.shopList.length) || this.shopList.filter(item => !item.selection).length) {
           return false;
         } else {
           return true;
@@ -142,9 +177,9 @@ export default {
       },
       set(val) {
         this.shopList = this.shopList.map(item => {
-          item.selection = val
+          item.selection = val;
           return item;
-        })
+        });
         // return true;
       }
     }
@@ -154,8 +189,21 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  padding-right: 0;
+  padding-left: 0;
   // 容器
   .shopList {
+    // 删除购物车商品按钮样式
+    .del {
+      display: inline-block;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+      color: #fff;
+      font-size: 18px;
+    }
+
     // 商品list
     .shop {
       background-color: #fff;
