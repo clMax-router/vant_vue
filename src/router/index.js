@@ -80,6 +80,12 @@ const routes = [
             name: 'Book stationery',
             //路由懒加载
             component: () => import('@/views/Type/Book stationery')
+        },
+        {
+            path:'/User/User',
+            name:'User',
+            //路由懒加载
+            component: () => import('@/views/User/User')
         }
     ]
   },
