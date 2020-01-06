@@ -16,6 +16,11 @@ import Vant from 'vant';
 // 导入vant的css
 import 'vant/lib/index.css';
 
+// 将封装的接口 挂载到  $api上
+import api from '@/api'
+// 将api 挂载到vue实例的属性上
+Vue.$api = Vue.prototype.$api = api;
+
 Vue.config.productionTip = false
 // 将vant 插件导入到vue实例中
 Vue.use(Vant);

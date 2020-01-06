@@ -3,21 +3,24 @@
     <ZNav />
     <div>
       <div class="swipe">
-        <van-swipe :autoplay="3000">
-          <van-swipe-item v-for="(item,index) in imgArr" :key="index">
+        <van-swipe :autoplay="3000"><!-- 轮播图 -->
+          <van-swipe-item v-for="(item,index) in imgArr" :key="index"> 
             <div class="swipe-item">
               <img :src="item" alt />
             </div>
           </van-swipe-item>
         </van-swipe>
       </div>
-      <div class="grid">
+      <div class="grid"> <!-- 8格卡片 -->
         <van-grid square clickable>
           <van-grid-item
             v-for="value in iconArr"
-            :key="value.txt"
+            :key="value.id"
             :icon="value.icon"
-            :text="value.txt"
+            :text="value.name"
+            :to="{path:'/searchResult',query:{
+              id: value.id
+            }}"
           />
         </van-grid>
       </div>
@@ -54,6 +57,16 @@ export default {
   components: {
     ZNav,
     CGoods
+  },
+  created(){
+    // 查询商品主类
+    // console.log(this.$api)
+    this.$api.shop.findByMain().then(
+      res => {
+        this.iconArr = res.splice(11)
+        // console.log()
+      }
+    )
   },
   data() {
     return {
