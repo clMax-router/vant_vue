@@ -31,7 +31,7 @@ const routes = [
           path: '/user',
           name: 'user',
           //路由懒加载
-          component: () => import('@/views/User/index') // 用户页面
+          component: () => import('@/views/User/login') // 用户页面
         },
         {
           path: '/search',
@@ -86,6 +86,12 @@ const routes = [
             name:'User',
             //路由懒加载
             component: () => import('@/views/User/User')
+        },
+        {
+            path:'/User/UserInfo',
+            name:'UserInfo',
+            //路由懒加载
+            component: () => import('@/views/User/UserInfo')
         }
     ]
   },

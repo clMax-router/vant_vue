@@ -7,34 +7,20 @@
             <van-tab title="邮箱登录">
                 <div class="input">
                     <van-cell-group>
-<<<<<<< HEAD
                         <van-field v-model="val1" placeholder="请输入邮箱地址" />
                     </van-cell-group>
                     <van-cell-group>
                         <van-field type="password" v-model="val2" placeholder="请输入密码" />
-=======
-                        <van-field v-model="username" placeholder="请输入邮箱地址" />
-                    </van-cell-group>
-                    <van-cell-group>
-                        <van-field type="password" v-model="password" placeholder="请输入密码" />
->>>>>>> 74d661b4640518c9c3425d4a1f4d072f996add26
                     </van-cell-group>
                 </div>
             </van-tab>
             <van-tab title="手机号登录">
                 <div class="input">
                     <van-cell-group>
-<<<<<<< HEAD
-                        <van-field v-model="val1" placeholder="请输入手机号" />
+                        <van-field v-model="val3" placeholder="请输入手机号" />
                     </van-cell-group>
                     <van-cell-group>
-                        <van-field type="password" v-model="val2" placeholder="请输入密码" />
-=======
-                        <van-field v-model="username" placeholder="请输入手机号" />
-                    </van-cell-group>
-                    <van-cell-group>
-                        <van-field type="password" v-model="password" placeholder="请输入密码" />
->>>>>>> 74d661b4640518c9c3425d4a1f4d072f996add26
+                        <van-field type="password" v-model="val4" placeholder="请输入密码" />
                     </van-cell-group>
                 </div>
             </van-tab>
@@ -51,24 +37,18 @@
 
 <script>
     export default {
-        name: "index",
+        name: "login",
         data() {
             return {
-<<<<<<< HEAD
                 val1:"",
                 val2:"",
-                active: 2
-=======
+                val3:"",
+                val4:"",
                 active: 2,
-                username: '',
-                password: ''
->>>>>>> 74d661b4640518c9c3425d4a1f4d072f996add26
             };
         },
         methods:{
-            // login(){
-            //     this.router.push("User/User");
-            // }
+
         }
     }
 </script>
