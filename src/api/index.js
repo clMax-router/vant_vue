@@ -1,10 +1,10 @@
 // 用来聚合所有接口
 // 引入网络请求地址
-import BASE_URL from '@/config/gateway.js'
+import {BASE_URL} from '@/config/gateway.js'
 console.log(BASE_URL)
 
 // 引入job模块
-import job from './models/job.js'
+import shop from './models/shop.js'
 import users from './models/users.js'
 
 
@@ -13,9 +13,8 @@ import ApiGenerator from '@/utils/apiGenerator.js'
 
 
 // 定义模块对象 聚合所有模块
-const modules = {
-    job,
-    ApiGenerator,
+const Modules = {
+    shop,
     users
 }
 
@@ -23,8 +22,8 @@ const modules = {
 const CONFIG = {
     BASE_URL,// 请求根路径
     TIMEOUT: 10000,//请求超时时间
-    WITHCORS: true,// 请求是否携带session验证
-    modules// 配置所有模块信息
+    WITHCORS: false,// 请求是否携带session验证
+    Modules// 配置所有模块信息
 }
 
 var apiGenerator =  new ApiGenerator(CONFIG) // 实例

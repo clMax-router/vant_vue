@@ -11,6 +11,10 @@
                     </van-cell-group>
                     <van-cell-group>
                         <van-field type="password" v-model="val2" placeholder="请输入密码" />
+                        <van-field v-model="username" placeholder="请输入邮箱地址" />
+                    </van-cell-group>
+                    <van-cell-group>
+                        <van-field type="password" v-model="password" placeholder="请输入密码" />
                     </van-cell-group>
                 </div>
             </van-tab>
@@ -21,6 +25,11 @@
                     </van-cell-group>
                     <van-cell-group>
                         <van-field type="password" v-model="val4" placeholder="请输入密码" />
+
+                        <van-field v-model="username" placeholder="请输入手机号" />
+                    </van-cell-group>
+                    <van-cell-group>
+                        <van-field type="password" v-model="password" placeholder="请输入密码" />
                     </van-cell-group>
                 </div>
             </van-tab>
@@ -48,8 +57,10 @@
             };
         },
         methods:{
-
-        }
+             active: 2,
+                username: '',
+                password: ''
+            }
     }
 </script>
 

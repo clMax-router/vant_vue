@@ -44,7 +44,7 @@ export default {
     return {
       value: "",
       id: 1,
-      historyTxt: [
+      historyTxt: JSON.parse(localStorage.getItem('historyTxt')) || [
         // { content: "akun", id: 1 },
         // { content: "akunsb", id: 2 },
         // { content: "akun", id: 3 },
@@ -61,6 +61,9 @@ export default {
     delHistory() {
       // 清空搜索历史
       this.historyTxt.splice(0);
+
+      // h5 存储
+      localStorage.setItem('historyTxt',JSON.stringify([]))
     },
     searchHistoryAdd() {
       // 添加历史记录
@@ -73,6 +76,10 @@ export default {
       };
       // console.log(111)
       this.historyTxt.push(history);
+
+      // h5 存储
+      localStorage.setItem('historyTxt',JSON.stringify(this.historyTxt))
+
       this.value = "";
     }
   }

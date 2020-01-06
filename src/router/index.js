@@ -97,8 +97,8 @@ const routes = [
   },
   {
     path:'/searchResult',
-    component:()=> import ('@/views/Result'),
-    name:'result'
+    component:()=> import ('@/views/Shop/searchResult'),
+    name:'searchResult'
   }
   // {
   //   path: '/about',

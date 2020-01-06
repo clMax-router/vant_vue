@@ -111,7 +111,7 @@
                 .van-cell-group{
 
                     .van-field{
-                        
+
                     }
                 }
             }
