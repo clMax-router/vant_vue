@@ -3,28 +3,27 @@
         <Nav/>
         <div class="head">
             <van-image
+                    fit="cover"
                     round
                     width="3rem"
                     height="3rem"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    src="https://i.pximg.net/img-master/img/2019/08/31/01/03/10/76541087_p0_master1200.jpg"
             />
-            <span>123</span>
+            <span style="color: #ffffff">MiKu</span>
         </div>
         <div class="nav">
             <div class="title">
                 <div class="left">我的订单</div>
                 <div class="right">全部订单 ></div>
             </div>
-            <div>
-                <van-grid :column-num="5">
+                <van-grid :column-num="5" clickable="true" >
                     <van-grid-item
-                            v-for="value in 5"
-                            :key="value"
-                            icon="photo-o"
-                            text="文字"
+                            v-for="value in iconArr"
+                            :key="value.txt"
+                            :icon="value.icon"
+                            :text="value.txt"
                     />
                 </van-grid>
-            </div>
         </div>
         <div class="main">
             <van-cell title="我的优惠券" is-link />
@@ -55,6 +54,13 @@
 
 <script>
     import Nav from  "@/components/nav/index2"
+    const iconArr = [
+        { icon: "pending-payment", txt: "待付款" },
+        { icon: "paid", txt: "尾款待支付" },
+        { icon: "point-gift-o\n", txt: "待发货" },
+        { icon: "logistics", txt: "待收货" },
+        { icon: "description", txt: "待评价" },
+    ];
     export default {
         name: "user",
         components:{
@@ -62,6 +68,7 @@
         },
         data() {
             return {
+                iconArr,
                 show: false
             }
         },
@@ -69,7 +76,7 @@
         methods: {
             showPopup() {
                 this.show = true;
-            }
+            },
         }
     }
 </script>
@@ -82,13 +89,15 @@
             flex-direction: column;
             align-items: center;
             padding: 1.5em 0 1.5em 0;
-            background-color: #bcbcbc;
+            background-image: url(https://yanxuan-static.nosdn.127.net/hxm/b2c-h5/p/20150730/static/media/userCenter-banner.6783c997.png);
+            background-size: cover;
         }
         .nav{
             .title{
                 display: flex;
                 justify-content: space-between;
-                margin: 1.5px 1em 1.5px 1em;
+                padding: 1.5px 1em 1.5px 1em;
+                background-color: #ffffff;
                 .left{
                     font-size: initial;
                     font-weight: bold;
@@ -98,7 +107,6 @@
                     font-weight: lighter;
                     color: #969799
                 }
-
             }
         }
         .main{
@@ -137,5 +145,15 @@
                 }
             }
         }
+    }
+</style>
+<style>
+    .van-grid-item__text {
+        color: #646566;
+        font-size: 0.31rem;
+        word-wrap: break-word;
+    }
+    .van-grid-item__icon {
+        color: #4aadf8;
     }
 </style>

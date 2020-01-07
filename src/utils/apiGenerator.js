@@ -1,4 +1,4 @@
-// 导入axios 
+// 导入axios
 import Axios from 'axios';
 
 // 导入qs模块
@@ -125,8 +125,6 @@ class ApiGenerator { // es6的语法
             }
         }
     }
-
-
 }
 
 export default ApiGenerator; //导出 api生成器
