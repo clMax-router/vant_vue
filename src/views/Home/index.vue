@@ -18,8 +18,9 @@
             :key="value.id"
             :icon="value.icon"
             :text="value.name"
-            :to="{path:'/searchResult',query:{
-              id: value.id
+            :to="{name:'searchResult',params:{
+              id: value.id,
+              name: value.name
             }}"
           />
         </van-grid>
@@ -42,16 +43,16 @@ const imgArr = [
   require("@/assets/img3.jpg")
 ];
 // 定义icon数组
-const iconArr = [
-  { icon: "balance-o", txt: "数码" },
-  { icon: "refund-o", txt: "图书" },
-  { icon: "diamond-o", txt: "儿童玩具" },
-  { icon: "photo-o", txt: "生活用品" },
-  { icon: "birthday-cake-o", txt: "akun" },
-  { icon: "aim", txt: "xjj" },
-  { icon: "idcard", txt: "zhj" },
-  { icon: "shopping-cart", txt: "tp" }
-];
+// const iconArr = [
+//   { icon: "balance-o", txt: "数码" },
+//   { icon: "refund-o", txt: "图书" },
+//   { icon: "diamond-o", txt: "儿童玩具" },
+//   { icon: "photo-o", txt: "生活用品" },
+//   { icon: "birthday-cake-o", txt: "akun" },
+//   { icon: "aim", txt: "xjj" },
+//   { icon: "idcard", txt: "zhj" },
+//   { icon: "shopping-cart", txt: "tp" }
+// ];
 export default {
   name: "home",
   components: {
@@ -63,15 +64,16 @@ export default {
     // console.log(this.$api)
     this.$api.shop.findByMain().then(
       res => {
-        this.iconArr = res.splice(11)
-        // console.log()
+        console.log(res)
+        // res.length = 8;    
+        this.iconArr = res
       }
     )
   },
   data() {
     return {
       imgArr,
-      iconArr
+      iconArr: []
     };
   }
 };
