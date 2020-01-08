@@ -65,6 +65,7 @@
         },
         data() {
             return {
+                value:'',
                 show: false,
                 one: false,
                 two:false,

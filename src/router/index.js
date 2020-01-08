@@ -92,6 +92,18 @@ const routes = [
             name:'UserInfo',
             //路由懒加载
             component: () => import('@/views/User/UserInfo')
+        },
+        {
+            path:'/Shop/Order',
+            name:'Order',
+            //路由懒加载
+            component: () => import('@/views/Shop/Order')
+        },
+        {
+            path:'/User/coupon',
+            name:'coupon',
+            //路由懒加载
+            component: () => import('@/views/User/coupon')
         }
     ]
   },

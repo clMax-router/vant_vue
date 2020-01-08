@@ -8,25 +8,27 @@
                     width="3rem"
                     height="3rem"
                     src="https://i.pximg.net/img-master/img/2019/08/31/01/03/10/76541087_p0_master1200.jpg"
+                    @click="userinfo"
             />
             <span style="color: #ffffff">MiKu</span>
         </div>
         <div class="nav">
             <div class="title">
                 <div class="left">我的订单</div>
-                <div class="right">全部订单 ></div>
+                <div class="right" @click="order">全部订单 ></div>
             </div>
-                <van-grid :column-num="5" clickable="true" >
+                <van-grid :column-num="5" :clickable="true" :border="false">
                     <van-grid-item
                             v-for="value in iconArr"
                             :key="value.txt"
                             :icon="value.icon"
                             :text="value.txt"
+                            @click="order"
                     />
                 </van-grid>
         </div>
         <div class="main">
-            <van-cell title="我的优惠券" is-link />
+            <van-cell title="我的优惠券" is-link value="0张" to="/User/coupon" />
             <van-cell title="我的地址" is-link />
             <van-cell title="我的收藏夹" is-link />
             <van-cell title="账号安全" is-link />
@@ -43,7 +45,7 @@
                         <span>确认退出登录吗？</span>
                     </div>
                     <div class="select">
-                        <van-button type="default">取消</van-button>
+                        <van-button type="default" @click="cancel">取消</van-button>
                         <van-button style="color: #4aadf8;" type="default">确认</van-button>
                     </div>
                 </div>
@@ -69,7 +71,7 @@
         data() {
             return {
                 iconArr,
-                show: false
+                show: false,
             }
         },
 
@@ -77,6 +79,15 @@
             showPopup() {
                 this.show = true;
             },
+            userinfo:function () {
+                this.$router.push('/User/UserInfo')
+            },
+            cancel(){
+                this.show = false;
+            },
+            order:function () {
+                this.$router.push('/Shop/Order')
+            }
         }
     }
 </script>
