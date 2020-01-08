@@ -27,12 +27,12 @@
     <div style="height:80px"></div>
     <!-- 展示商品 -->
     <div class="card">
-      <div :class="[{shop:true,shopMarign:item%2 != 0}]" :key="item" v-for="(item) in 3">
+      <div @click="goInfo(item.id)" :class="[{shop:true,shopMarign:index%2 == 0}]" :key="item.id" v-for="(item,index) in shopList">
         <img
-          src="http://nos.netease.com/dmall-mc/%E4%B8%BB%E5%9B%BE.png8bdb5783-7647-451c-84e8-1ee6acdc681e?download=%25E4%25B8%25BB%25E5%259B%25BE.png&Signature=4Md8a0XuuCCD7co1uY27IuST4vfuoABk0riwU0Hc88A%3D&Expires=1578184691&NOSAccessKeyId=63c3e0b0ebcf4330a6fa86a2b4a32b84"
+          :src="item.image"
         />
-        <div class="shopInfo">守望先锋 麦克雷黏土人</div>
-        <div class="shopPic">￥248.00</div>
+        <div class="shopInfo">{{item.title.slice(0,15) + '...'}}</div>
+        <div class="shopPic">￥{{item.price}}</div>
       </div>
     </div>
   </div>
@@ -44,8 +44,21 @@ export default {
   name: "searchResult",
   data() {
     return {
-      active: 0
+      active: 0,
+      shopList:[]
     };
+  },
+  methods:{
+    goInfo(id){ // 查看商品详情方法
+      console.log(id)
+    }
+  },
+  created(){
+    // console.log(111,this.$route.params)
+    this.$api.shop.findByType({page:1,row:10,id:560}).then( res => {
+      // console.log(res)
+      this.shopList = res.content
+    })
   },
   components: {
     Nav
@@ -61,7 +74,6 @@ export default {
   left: 0;
   .van-tabbar-item {
     font-size: 16px;
-
     .center {
       // 让文字和 icon图标对齐
       display: flex;

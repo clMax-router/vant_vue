@@ -29,6 +29,26 @@ const shop = [
         name:'findById',
         // 定义方法的作用
         title: '根据商品id获取商品（商品id）'
+    },
+    {
+        // 定义url地址
+        url: 'item/findByType',
+        // 定义请求方式
+        method: 'get',
+        // 定义请求的方法名
+        name:'findByType',
+        // 定义方法的作用
+        title: '(page,row,id)  根据商品类型分页获取商品（当前页，每页条数，类型id）'
+    },
+    {
+        // 定义url地址
+        url: 'item/findByName',
+        // 定义请求方式
+        method: 'get',
+        // 定义请求的方法名
+        name:'findByName',
+        // 定义方法的作用
+        title: '(page,row,name)  根据商品名称模糊查询商品，分页获取商品（当前页，每页条数，name）'
     }
 ]
 

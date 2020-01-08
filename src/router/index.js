@@ -108,9 +108,14 @@ const routes = [
     ]
   },
   {
-    path:'/searchResult',
+    path:'/searchResult/:name',
     component:()=> import ('@/views/Shop/searchResult'),
     name:'searchResult'
+  },
+  {
+    path:'/shopInfo',
+    component:()=> import ('@/views/Shop/shopInfo'),
+    name:'shopInfo'
   }
   // {
   //   path: '/about',
