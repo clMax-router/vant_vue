@@ -18,8 +18,22 @@
                 <van-popup
                         v-model="show"
                         position="bottom"
+                        :duration="0"
                         :style="{ height: '100%' }">
-                    <div>464513</div>
+                    <div class="explain">
+                        <span>优惠券使用</span>
+
+                        <p>1，单笔订单只能使用1张优惠券，不支持同时使用多张，用券后差额不找零，不退回;</p>
+                        <p>2，优惠券（包括新用户券）不能抵扣运费，只能抵扣商品金额，特价商品不可使用优惠券，与其他优惠不同享；</p>
+                        <p>3，每张优惠券的使用条件请查看对应优惠券的使用说明；</p>
+                        <p>4，请在有效的短期使用优惠券，未使用的优惠券过期后，将自动作废；</p>
+
+                        <span>优惠券无效</span>
+
+                        <p>1，使用优惠券的订单，若产生退货，优惠券均不退回，退款金额按优惠后的小计金额退款；</p>
+                        <p>2，参加满赠券活动获得的赠券，发生退货时，若订单中剩余的商品不满足赠券条件，实物赠品需撤退退货并寄回，否则替换中扣减对应金额，客服审核通过退货申请后，所获赠券将会自动失效；</p>
+                        <p>3，优惠券重新出售或转让，如经发现并证实的，该券将重新终止处理；</p>
+                    </div>
                     <van-button type="default" @click="back">返回</van-button>
                 </van-popup>
             </div>
@@ -91,6 +105,13 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                .explain{
+                    color: #000000;
+                    font-size: revert;
+                    font-weight: lighter;
+                    padding: 20px 20px 0px 20px;
+                    line-height: 25px;
+                }
             }
         }
     }

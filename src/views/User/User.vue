@@ -29,7 +29,7 @@
         </div>
         <div class="main">
             <van-cell title="我的优惠券" is-link value="0张" to="/User/coupon" />
-            <van-cell title="我的地址" is-link />
+            <van-cell title="我的地址" is-link to="/User/address" />
             <van-cell title="我的收藏夹" is-link />
             <van-cell title="账号安全" is-link />
             <van-cell title="联系客服" is-link />

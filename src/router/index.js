@@ -104,6 +104,12 @@ const routes = [
             name:'coupon',
             //路由懒加载
             component: () => import('@/views/User/coupon')
+        },
+        {
+            path:'/User/address',
+            name:'address',
+            //路由懒加载
+            component: () => import('@/views/User/address')
         }
     ]
   },
