@@ -4,7 +4,7 @@
         <div class="main">
             <All/>
             <div class="footer">
-                <img src="@/assets/img1.jpg" height="100" width="90%"/>
+                <img src="@/assets/img1.jpg" height="80px" width="90%"/>
                 <div class="text">———— 居家生活 ————</div>
                 <van-grid :column-num="3">
                     <van-grid-item
@@ -32,24 +32,22 @@
 
 <style lang="scss" scoped>
     .home {
-        height: 500px;
         color: #4aadf8;
         text-align: center;
         font-size: small;
         background: #ffffff;
-        padding-top: 10px;
         .main{
             display: flex;
             justify-content: space-between;
             .footer{
-
+                .text{
+                        margin-top: 20px;
+                    }
+                .van-grid{
+                    margin-top: 20px;
+                }
             }
         }
-        .text{
-            margin-top: 20px;
-        }
-        .van-grid{
-            margin-top: 20px;
-        }
+        
     }
 </style>

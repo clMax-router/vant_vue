@@ -30,10 +30,10 @@
         <div class="main">
             <van-cell title="我的优惠券" is-link value="0张" to="/User/coupon" />
             <van-cell title="我的地址" is-link to="/User/address" />
-            <van-cell title="我的收藏夹" is-link />
-            <van-cell title="账号安全" is-link />
+            <van-cell title="我的收藏夹" is-link to="/User/Favorite" />
+            <van-cell title="账号安全" is-link to="/User/Account security"/>
             <van-cell title="联系客服" is-link />
-            <van-cell title="意见反馈" is-link />
+            <van-cell title="意见反馈" is-link to="/User/Feedback" />
             <van-cell title="常见问题" is-link />
         </div>
         <div class="footer">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="select">
                         <van-button type="default" @click="cancel">取消</van-button>
-                        <van-button style="color: #4aadf8;" type="default">确认</van-button>
+                        <van-button style="color: #4aadf8;" type="default" @click="quit">确认</van-button>
                     </div>
                 </div>
             </van-popup>
@@ -84,6 +84,9 @@
             },
             cancel(){
                 this.show = false;
+            },
+            quit(){
+                this.$router.push('/user')
             },
             order:function () {
                 this.$router.push('/Shop/Order')

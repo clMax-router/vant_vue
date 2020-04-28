@@ -32,24 +32,21 @@
 
 <style lang="scss" scoped>
     .home {
-        height: 500px;
         color: #4aadf8;
         text-align: center;
         font-size: small;
         background: #ffffff;
-        padding-top: 10px;
         .main{
             display: flex;
             justify-content: space-between;
             .footer{
-
+                .text{
+                    margin-top: 20px;
+                    }
+                .van-grid{
+                    margin-top: 20px;
+                }
             }
-        }
-        .text{
-            margin-top: 20px;
-        }
-        .van-grid{
-            margin-top: 20px;
         }
     }
 </style>

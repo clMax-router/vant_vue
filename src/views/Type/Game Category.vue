@@ -31,8 +31,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .game{
-        height: 500px;
+        .game{
         color: #4aadf8;
         text-align: center;
         font-size: small;
@@ -42,12 +41,12 @@
             justify-content: space-between;
             .footer{
                 .title{
-                    margin-top: 50px;
+                    margin-top: 30px;
+                }
+                .van-grid{
+                    margin-top: 20px;
                 }
             }
-        }
-        .van-grid{
-            margin-top: 20px;
         }
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <van-sidebar v-model="index">
+        <van-sidebar v-model="activeKey" @change="onChange">
             <van-sidebar-item to="/type/Game Category" title="游戏分类"/>
             <van-sidebar-item to="/type/Home life" title="居家生活"/>
             <van-sidebar-item to="/type/Hand-made model" title="手办模型"/>
@@ -14,12 +14,18 @@
 
 <script>
     var routerArr = ["/type/Game Category","/type/Home life","/type/Hand-made model","/type/Digital peripherals","/type/Accessories pendant","/type/Clothing","/type/Book stationery"];
+    import { Notify } from 'vant';
     export default {
         name: "All types",
         data() {
             return {
-                index: 0
+                activeKey: 0,
             };
+        },
+        methods: {
+            onChange(index) {
+                Notify({ type: 'primary', message: index });
+            },
         },
         created() {
             var path = this.$route.path;
