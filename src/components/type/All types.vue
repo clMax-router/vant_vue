@@ -5,7 +5,7 @@
     :main-active-index.sync="active"
   >
     <template #content>
-      <van-grid :column-num="3" v-if="active === 0">
+      <van-grid clickable :column-num="3" v-if="active === 0">
         <van-grid-item
           v-for="(item, index) in imageList"
           :icon="item.image"
@@ -17,8 +17,8 @@
         <van-grid-item
           v-for="value in 9"
           :key="value"
-          icon="photo-o"
-          text="数字"
+          icon="eye-o"
+          text="2"
         />
       </van-grid>
       <van-grid :column-num="3" v-if="active === 2">
@@ -26,7 +26,7 @@
           v-for="value in 9"
           :key="value"
           icon="photo-o"
-          text="1"
+          text="3"
         />
       </van-grid>
       <van-grid :column-num="3" v-if="active === 3">
@@ -34,7 +34,7 @@
           v-for="value in 9"
           :key="value"
           icon="photo-o"
-          text="2"
+          text="4"
         />
       </van-grid>
       <van-grid :column-num="3" v-if="active === 4">
@@ -42,7 +42,7 @@
           v-for="value in 9"
           :key="value"
           icon="photo-o"
-          text="3"
+          text="5"
         />
       </van-grid>
       <van-grid :column-num="3" v-if="active === 5">
@@ -50,7 +50,7 @@
           v-for="value in 9"
           :key="value"
           icon="photo-o"
-          text="4"
+          text="6"
         />
       </van-grid>
       <van-grid :column-num="3" v-if="active === 6">
@@ -58,7 +58,7 @@
           v-for="value in 9"
           :key="value"
           icon="photo-o"
-          text="5"
+          text="7"
         />
       </van-grid>
     </template>
