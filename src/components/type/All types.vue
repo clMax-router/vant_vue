@@ -1,6 +1,5 @@
 <template>
-  <div class="sidebar">
-    <van-tree-select :items="items" :main-active-index.sync="active">
+    <van-tree-select height="100%" :items="items" :main-active-index.sync="active">
       <template #content>
         <van-grid :column-num="3" v-if="active === 0">
           <van-grid-item
@@ -18,14 +17,37 @@
             text="数字"
           />
         </van-grid>
+        <van-grid :column-num="3" v-if="active === 2">
+          <van-grid-item
+            v-for="value in 9"
+            :key="value"
+            icon="photo-o"
+            text="1"
+          />
+        </van-grid>
+        <van-grid :column-num="3" v-if="active === 3">
+          <van-grid-item
+            v-for="value in 9"
+            :key="value"
+            icon="photo-o"
+            text="2"
+          />
+        </van-grid>
+        <van-grid :column-num="3" v-if="active === 4">
+          <van-grid-item
+            v-for="value in 9"
+            :key="value"
+            icon="photo-o"
+            text="3"
+          />
+        </van-grid>
       </template>
     </van-tree-select>
-  </div>
 </template>
 
 <script>
 export default {
-  name: "All types",
+  name: "allTypes",
   data() {
     return {
         active: 0,
@@ -41,8 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sidebar{
-  width: 100%;
-  height: 100%;
+.van-sidebar-item--select{
+    border-color:#409eff;
 }
 </style>
